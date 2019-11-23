@@ -1,7 +1,10 @@
 *.xml
+
 *.strings
-voice_menu.txt
-lokalizasyon.xlsx
+
+*.xlsx
+
+*.txt
 
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node

@@ -4,6 +4,7 @@
   "description": "Generates auto to implement localized string resource from Google Sheets",
   "main": "index.js",
   "dependencies": {
+    "https": "^1.0.0",
     "xlsx": "^0.15.1"
   },
   "devDependencies": {},
