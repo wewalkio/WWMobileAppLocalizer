@@ -1,256 +1,314 @@
-"ahead" = "للأمام";
-"log_into_amazon" = "تسجيل الدخول عبر حسابك على أمازون";
-"already_a_member" = "هل لديك حساب بالفعل؟ تسجيل الدخول";
-"amazon_alexa" = "Amazon Alexa";
-"ended_navigation" = "نهاية التوجيه";
-"apply" = "تطبيق";
-"back" = "العودة";
-"birthday_placeholder" = "تاريخ الميلاد";
-"black_white_theme" = "سمة الأبيض والأسود";
-"black_yellow_theme" = "سمة الأصفر والأسود";
-"navigation_brief" = "من أصل d% مراحل وd% متر؛ أنت الآن في المرحلة d%، باقي d% مرحلة وd% مترًا إلى وجهتك.";
-"bus_info_pattern" = "%s - %d دقيقة %s";
-"connected_battery_level" = "WeWALK متصلة، البطارية d% %%";
-"connected_battery_level_charging" = "WeWALK متصلة، الشحن d% %%";
-"consent_information" = "Clear Consent Text Concerning the Processing of Personal Data ("Text")\nI accept, declare and undertake that Within the framework of the privacy policy ("Policy"), Within the scope of WeWALK Project carried out by WeWALK Teknoloji Inc., in order to make users benefit from the smart cane technology service designed by the visually impaired and plan, exicute and improve the processes of providing the aforementioned service, fulfill the obligations arising from its nature, plan the necessary activities on behalf of suggestions and promotions by regarding us users' likes, usage habits and needs and custimizations based on them, my information related to my vision loss, walking distance and duration, my website usage data, the necessary data towards making payment processes may be collected, processed, updated, checked periodically, kept and stored in databases, and if necessary, may be shared with relevant public institutions and organizations and third parties that are our solution partners as required by our business relations In accordance with the European Data Protection Regulation ("GDPR") and the Law No. 6698 on the Protection of Personal Data ("KVKK"), and necessary information related to above is provided to me in accordance with the provisions of the relevant legislation, and that I have read and understood each page of the Policy in full. \nExcept in cases where processing is permitted under GDPR and KVKK legislations, if you do not accept this Text which requires your acceptance for the processing of any personal data Including your special personal data mentioned above, we hereby inform you that we will not be able to provide you with the necessary and sufficient service in terms of our processes that require your express consent and that our commercial and operational activities will be adversely affected.";
-"credits" = "الرصيد";
-"default_theme" = "السمة الافتراضية";
-"delete_location" = "حذف الموقع";
-"alexa_info" = "أليكسا مساعدة صوتية مطورة بواسطة أمازون متاحة باللغات الإنجليزية والألمانية واليابانية يمكنك استخدام امازون إليكسا في WeWALK الخاصة بك بعد تسجيل الدخول إلى حسابك على أمازون. يمكنك زيارة موقع أمازون إليكسا لمعرفة اللغات المدعومة حاليًا.";
-"obstacle_detection_info" = "اقترب ببطء مستقيمًا من جدار مرتفع بواسطة WeWALK الخاصة بك، لتجربة مختلف التحذيرات الخاصة بمسافة كشف العوائق. اختر خيار تحذير مسافة العوائق الذي سيعطيك أدق تحذير في أنسب وقت. مسافة التحذير 135 سم لشخص متوسط الطول. يمكنك اختبار مسافة التحذير التي تظن أنه الأنسب لك في مكان واسع.";
-"voice_feedback_info" = "عند تفعيل هذه الخاصية؛ سوف يتم الإعلان عن توجيهات هذه المرحلة كلما مشيت عدد محددًا من الخطوات أوكلما مرت فترة زمنية محددة.";
-"low_charge" = "تعطي تحذيرًا صوتيًا عند انخفاض شحن البطارية.";
-"plugged_out" = "تعطي تحذيرًا صوتيًا عند فصل الجهاز عن الكهرباء.";
-"plugged_in" = "تعطي تحذيرًا صوتيًا عند وصل الجهاز بالكهرباء.";
-"turn_wewalk_off" = "الضغط على زر الطاقة مع الاستمرار بالضغط يغلق WeWALK.";
-"distance_warning_info" = "تعطي تحذيرًا صوتيًا عند ابتعاد الهاتف مسافة محدد عن الـ WeWALK.";
-"tap_and_hold_horn" = "يُشغل بوق الجهاز بالنقر مرة واحدة ثم الاستمرار بالضغط على لوحة اللمس. تعمل هذه الخاصية فقط إذا كانت تفضيلات البوق مفعلة في علامة تبويب التفضيلات.";
-"where_is_my_wewalk_explainer" = "تعطي تنبيهًا صوتيًا عند الضغط على زر "أين WeWALK الخاص بي" في تطبيق الهاتف.";
-"turn_light_off_explainer" = "يُطفأ ضوء الجهاز عند ضم أصبعين أو إبعادهما عن بعضها على طول قطر لوحة اللمس.";
-"turn_light_on_explainer" = "يشغل ضوء الجهاز عند ضم أصبعين أو إبعادهما عن بعضها على طول قطر لوحة اللمس.";
-"touchpad_release" = "يُلغى تنشيط الميكروفون عند رفع الأصابع من على لوحة اللمس.";
-"tap_and_hold_microphone" = "يُنشّط الميكروفون عند الضغط مع الاستمرار على لوحة اللمس.";
-"turn_wewalk_on" = "الضغط على زر الطاقة مع الاستمرار بالضغط يُشغّل WeWALK.";
-"device_settings" = "تفضيلات الجهاز";
-"sleep_mode_explainer" = "تدخل WeWALK في وضع النوم عندما تبقى ساكنة.";
-"awake_explainer" = "تستيقظ WeWALK عندما تبدأ بالحركة.";
-"email_or_phone_number" = "البريد الإلكتروني/الهاتف";
-"email_placeholder" = "البريد الإلكتروني";
-"edit_location" = "تعديل الموقع";
-"fail_text_2" = "عفوًا، هل يمكنك المحاولة مجددًأ؟";
-"fail_text_3" = "من الأرجح أنك تواجه مشكلة في هذه الإشارة.";
-"fail_text_1" = "حدث خطأ ما. عفوًا، هل يمكنك المحاولة مجددًأ؟";
-"finish_screen" = "إنهاء التدريب";
-"forgot_password" = "نسيت كلمة السر";
-"name_placeholder" = "الاسم الكامل";
-"gesture_desc_1" = "الإشارة 1 من 8 - التمرير لليسار: مرر أصبعًا واحدًا من اليمين لليسار على لوحة اللمس الخاصة ب WeWALK.";
-"gesture_name_1" = "مرر أصبعك من اليمين لليسار";
-"gesture_desc_2" = "الإشارة 2 من 8 - التمرير لليمين: مرر أصبعًا واحدًا من اليسار لليمين على لوحة اللمس الخاصة ب WeWALK.";
-"gesture_name_2" = "مرر أصبعك من اليسار لليمين";
-"gesture_desc_3" = "الإشارة 3 من 8 - مرر للخلف: مرر أصبعًا واحدًا من الأمام (من جهة حساس تحديد العوائق) إلى تجاهك (قمة WeWALK).";
-"gesture_name_3" = "مرر أصبعك للخلف";
-"gesture_desc_4" = "الإشارة 4 من 8 - مرر للأمام: مر أصبعًا واحداً من الخلف (من قمة WeWALK) إلى الأمام (باتجاه حساس تحديد العوائق).";
-"gesture_name_4" = "مرر أصبعك للأمام";
-"gesture_desc_5" = "الإشارة 5 من 8 - النقر المزدوج: انقر على لوحة اللمس بإصبعٍ واحد، ارفع إصبعك ثم انقر مرة أخرى بعد نصف ثانية.";
-"gesture_name_5" = "انقر نقرة مزدوجة";
-"gesture_desc_6" = "الإشارة 6 من 8 الميكروفون / وبوق التنبيه: مرة أخرى، انقر نقرة مزدوجة بإصبعِ واحدِ كما في الإشارة السابقة. ولكن اترك إصبعك ملامسًا للوحة اللمس ولا ترفعه بعد النقرة الثانية. ستسمع صوتًا عند أداء هذه الإشارة. بعد سماعك إياه؛ انتظر لوهلة قبل رفع إصبعك من على لوحة اللمس. يمكن استخدام هذه الإشارة لخاصيتي الميكروفون وبوق التنبيه.";
-"gesture_name_6" = "الميكروفون أو بوق التنبيه";
-"gesture_desc_7" = "الإشارة 7 من 8 - ضم الأصابع أو إبعادهما: ضع إصبعين على ركني لوحة اللمس بحيث لا يخرجا عنها. ضم إصبعيك تجاه بعضهما البعض على طول قطر لوحة اللمس بحركة مشابهة لحركة القرص. أو ضع أصبعين متلامسين في منتصف لوحة اللمس وباعد بينهما قطريًا تجاه الركنين. ستسمع صوتًا عند أداء هذه الإشارة. يضيئ ضوء الجهاز وينطفئ عند أداء هذه الإشارة.";
-"gesture_name_7" = "تشغيل/إيقاف تشغيل الليد";
-"gesture_desc_8" = "الإشارة 8 من 8 - تمرير أصبعين: ضع أصبعين على لوحة اللمس مع ترك مسافة نصف سنتيمتر بينهما. مرر الأصبعين من الأمام للخلف. عند أداء هذه الإشارة، سيعمل حساس الأمواج فوق الصوتية وإن كنت أمام عائق مثل حائط أو ما شابهه ستبدأ WeWALK في الاهتزاز. أو تتوقف خاصية كشف العوائق ويتوقف الاهتزاز.";
-"gesture_name_8" = "تشغيل/إيقاف تشغيل كشف العوائق";
-"tap_to_update_your_location" = "تحديث موقعي";
-"get_upcoming_buses" = "اعرف الحافلات القادمة";
-"give_feedback" = "هل لديك سؤال؟";
-"go_there" = "اذهب الى هناك";
-"home" = "الصفحة الرئيسية";
-"how_to_purchase_wewalk" = "كيف يمكنني شراء WeWALK؟";
-"i_read" = "قرأت وأوافق";
-"i_am_here" = "أنا هنا";
-"version_history" = "تاريخ الإصدار";
-"invalid_login_infomation" = "المعلومات المدخلة غير صالحة";
-"cancel" = "إلغاء";
-"distance_warning" = "تحذير المسافة";
-"disability_placeholder" = "نسبة فقدان البصر";
-"obstacle_detection_distance" = "مسافة اكتشاف العوائق";
-"enter_email" = "يُرجى إدخال بريدك الإلكتروني";
-"long_distance" = "يبعد الموقع الذي تريد الحصول على توجيهات للوصول مسافة 2.5 كم أو أكثر. قد تضطر للمشي أكثر من 30 دقيقة. هل مازلت تود الحصول على توجيهات الوصول؟";
-"wewalk_fully_charged" = "WeWALK مشحونة بالكامل، يمكنك نزعها من الشحن.";
-"gesture_training" = "تمرين الإشارة";
-"get_navigation" = "الحصول على التوجيهات";
-"horn" = "بوق التنبيه";
-"device_sounds" = "أصوات الجهاز";
-"legal" = "الجانب القانوني";
-"user_manual" = "دليل المستخدم";
-"user_agreement" = "الاتفاقية";
-"privacy_policy" = "اتفاقية الخصوصية";
-"log_out" = "تسجيل الخروج";
-"set_voice_feedback" = "تفضيلات تكرار التوجيهات";
-"ok" = "موافق";
-"saved_locations" = "المواقع المحفوظة";
-"wewalk_sound_level" = "مستوى صوت WeWALK";
-"updated_successfully" = "لقد حدثت حسابك بنجاح";
-"weight_placeholder" = "الوزن";
-"you_did" = "لقد فعلت: @%";
-"change_language" = "اختر اللغة";
-"left" = "يسار";
-"loading" = "جاري التحميل";
-"finding_your_location" = "جاري تحديد الموقع";
-"no_location_services" = "خاصية تحديد الموقع مغلقة";
-"log_in" = "تسجيل الدخول إلى WeWALK";
-"login" = "تسجيل الدخول";
-"ferry-train" = "بعد d% مترًا ستجد سفينة عبارة ";
-"ferry" = "بعد d% مترًا ستجد سفينة عبارة ";
-"fork-left" = "بعد d% مترًا، استمر في الطريق المتشعب لليسار";
-"fork-right" = "بعد d% مترًا، استمر في الطريق المتشعب لليمين";
-"merge" = "بعد d% مترًا، استمر في الطريق المندمج";
-"ramp-left" = "بعد d% مترًا، انعطف يسارًا باتجاه المنحدر";
-"ramp-right" = "بعد d% مترًا، انعطف يمينًا باتجاه المنحدر";
-"ramp" = "بعد d% مترًا، استمر باتجاه المنحدر";
-"roundabout-left" = "بعد d% مترًا، انعطف يسارًا عند الدوار";
-"roundabout-right" = "بعد d% مترًا، انعطف يمينًا عند الدوار";
-"straight" = "استمر للأمام لمسافة d% متر";
-"turn-left" = "بعد d% متر انعطف يسارًا";
-"turn-right" = "بعد d% متر، انعطف يمينًا باتجاه المنحدر";
-"turn-sharp-left" = "بعد d% متر انعطف لأقصى اليسار";
-"turn-sharp-right" = "بعد d% متر انعطف لأقصى اليمين";
-"turn-slight-left" = "بعد d% متر تقدم تقدمًا طفيفًا";
-"turn-slight-right" = "بعد d% متر انعطف انعطافًا طفيفًا لليمين";
-"uturn-left" = "بعد d% متر التف إلى الخلف متجه إلى اليسار";
-"uturn-right" = "بعد d% متر التف إلى الخلف متجه إلى اليمين";
-"end_navigation" = "إنهاء التوجيه";
-"destination_reached" = "لقد وصلت إلى وجهتك";
-"invalid_name" = "الاسم غير صالح هل يمكنك المحاولة مرة أخرى؟";
-"navigation_settings" = "تفضيلات التوجيه";
-"navigation" = "التوجيه";
-"saved_locations_placeholder" = "لا يمكن العثور على أي مواقع محفوظة يمكنك البحث عن موقع ما وإضافته باستخدام حقل البحث أعلاه، أو يمكنك ضغط زر " احفظ موقعي الحالي" في علامة التبويب الخاصة بالصفحة الرئيسية لحفظ موقعك الحالي.";
-"no" = "لا";
-"not_connected_text" = "تحتاج إلى توصيل WeWALK الخاصة بك لإجراء التدريب. يمكنك الذهاب للصفحة الرئيسية لتوصيل WeWALK.";
-"younger_than_16" = "يجب ألا يقل عمرك عن 16 عامًا لتدير البيانات الشخصية.";
-"other_settings" = "التفضيلات الأخرى";
-"min_6_characters" = "يجب ألا تقل كلمة المرور عن 6 أحرف";
-"password" = "أدخل كلمة مرورك";
-"new_password" = "كلمة المرور";
-"phone_number_placeholder" = "الهاتف";
-"play_sound" = "تشغيل الصوت";
-"settings" = "التفضيلات";
-"profile" = "الحساب";
-"promoting_text_1" = "رائع! هل يمكنك المحاولة مجددًأ؟";
-"promoting_text_3" = "مرة أخرى أخيرة...";
-"promoting_text_2" = "أنت تتحسن بالفعل. هل يمكنك المحاولة مرة أخرى؟";
-"navigation_preparation" = "امشِ d% مترًا لنقطة البداية";
-"restart_navigation" = "إعادة بدء التوجيه";
-"refresh" = "تجديد";
-"change_password" = "إعادة تعيين كلمة المرور";
-"right" = "يمين";
-"save_current_location" = "احفظ الموقع الحالي";
-"renew_password" = "تجديد كلمة المرور";
-"save" = "حفظ";
-"search" = "ابحث عن مكان";
-"location_search" = "البحث عن المواقع";
-"scanning_devices" = "البحث عن WeWALK قريبة";
-"sign_up" = "اشترك";
-"sign_up_justification" = "انضم لعائلة WeWALK باشتراكك وتمتع بالعديد من المزايا! سيمكنك الاشتراك مع WeWALK من حفظ بياناتك وإدارتها. وكذلك يمكننا التواصل معك أسرع بهذه الطريقة. يمكنك الاشتراك من البقاء على اطلاع حيال أحدث التطويرات والعديد من الخصائص المستقبلية.";
-"skip" = "تخطي";
-"33_percent" = "33%";
-"66_percent" = "66%";
-"100_percent" = "100%";
-"step_done" = "الخطوة فعلت";
-"start_navigation" = "بدء التوجيه";
-"start_training" = "بدء التدريب";
-"stop_info_pattern" = "s%(%s)\n\nمسافة: d% متر";
-"text_size" = "حجم النص";
-"consent_title" = "البيانات الشخصية";
-"try_again" = "حاول مرة أخرى";
-"next_gesture" = "الإشارة التالية";
-"tutorial" = "محتوى تعريفي";
-"update_wewalk" = "تحديث جهاز WeWALK الخاص بك";
-"update_profile" = "تحديث الحساب الشخصي";
-"version_history" = "تاريخ الإصدار";
-"visual_preferences" = "التفضيلات البصرية";
-"accessibility_sample_text" = "هذا نص تجريبي سيختلف حجم ولون النص مع تعديلك للتفضيلات البصرية";
-"find_my_phone" = "ابحث عن هاتفي";
-"save_location" = "احفظ موقعي";
-"where_am_i" = "أين أنا؟";
-"nearby_stations" = "المحطات القريبة";
-"obstacle_detection" = "كشف العوائق";
-"sound_level" = "مستوى الصوت";
-"up_to_date_message" = "لا يوجد تحديث جديد. جهازك مُحدّث.";
-"turn_bluetooth_on" = "لكي تعثر على جهاز WeWALK الخاص بك؛ يجب أولًا تشغيل بلوتوث الهاتف.";
-"please_read_and_accept_the_agreement" = "اقبل الشروط للمتابعة";
-"weight" = "الوزن: @%";
-"welcome_text" = "مرحبًا، أهلا بك في تدريب الإشارة الخاص ب WeWALK يمكنك تعلم إشارات WeWALK بالتدرب على لوحة اللمس لتصبح خبيرًا بها. يمكنك أيضًا الوصول لهذا التدريب لاحقًا من علامة تبويب محتوى تعريفي.";
-"well_done" = "رائع، لقد أتممنا الأمر. أنت الآن خبير.";
-"connect_wewalk" = "توصيل WeWALK";
-"connected" = "فصل WeWALK";
-"device_version" = "إصدار الجهاز: @%";
-"where_is_my_wewalk" = "أين WeWALK الخاصة بي؟";
-"language_selection" = "تفضيلات اللغة";
-"yes" = "نعم";
-"fifteenSecs" = "كل 15 ثانية";
-"fortyMeters" = "كل 40 مترًا";
-"noFeedback" = "لا تكرر الأمر";
-"sixtyMeters" = "كل 60 مترًا";
-"sixtySecs" = "كل دقيقة";
-"thirtySecs" = "كل 30 ثانية";
-"twentyMeters" = "كل 20 مترًا";
-"NSBluetoothAlwaysUsageDescription" = "نستخدم البلوتوث لتوصيل WeWALK";
-"NSBluetoothPeripheralUsageDescription" = "نستخدم البلوتوث لتوصيل WeWALK";
-"NSLocationAlwaysAndWhenInUseUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار "دائمًا"";
-"NSLocationAlwaysUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار "دائمًا"";
-"NSLocationUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار "دائمًا"";
-"NSLocationWhenInUseUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار "دائمًا"";
-"NSMicrophoneUsageDescription" = "ينبغي الحصول على تصريح استخدام الميكروفون لاستخدام الأوامر الصوتية.";
-"NSSpeechRecognitionUsageDescription" = "ينبغي الحصول على تصريح خاصية التعرف على الصوت لاستخدام خاصية البحث الصوتي.";
-"go_to_settings" = "الذهاب إلى الإعدادات";
-"no_location_permission" = "لم تعط تصريحًا للوصول إلى موقعك. يُرجى تشغيلها على إعدادات هاتفك.";
-"authorize_speech_recognition" = "يُرجى التصريح باستخدام خاصية التعرف على الصوت من إعدادات هاتفك.";
-"next" = "التالي";
-"switch_on" = "تشغيل";
-"switch_off" = "إيقاف تشغيل";
-"latest_changelog" = "<style>body{font-family:sans-serif; line-height: 2;}</style><h1>What's new on 1.5.0 Version?</h1><ul><li>We've been busy and made some significant upgrades to the entire WeWALK user experience! Firstly, we now have settings for low vision users, where text size and background colours can be changed to improve contrast. This can all be found under the visual preferences tab.</li><li>The WeWALK app can now be used without a WeWALK cane, giving new and existing users the choice on how they want to use our navigation features. We've removed the "Connect your WeWALK" message that sometimes appears while getting navigation.</li><li>We have also redesigned our user interface, making it easier to get to WeWALK’s best features. The integrations tab has now been replaced. We have a new home screen where you can start navigation, display your current address and save your location. All your preferences and settings are now in one place in the new preferences tab.</li><li>The profile screen has been streamlined and making an account is now easier. We have improved our data management and we highly recommend creating an account to ensure your WeWALK and interface settings are backed up! Your personal data is not used or distributed by us and we’re making invisible changes in each update to better protect your personal data.</li><li>Finally, we noted that speech from the voice menu was sometimes too quiet. We’ve reworked all our voices and increased the volume. Double-tap WeWALK’s touchpad to use voice menu.</li><li>As always, thank you for your ongoing support and feedback and we hope you enjoy using the new update!</li></ul>The WeWALK team";
-"tap_to_set_your_country_code" = "اضغط لضبط رمز البلد";
-"menu_has_closed" = "أغلقت القائمة";
-"name" = "الاسم: @% @%";
-"email" = "البريد الإلكتروني: @%";
-"phone" = "الهاتف: @%";
-"password_accessibility" = "كلمة المرور: @%";
-"disability_ratio" = "نسبة الإعاقة: @%";
-"device_not_found" = "لم يمكن العثور على أي WeWALK";
-"please_restart_the_app" = "يُرجى إعادة تشغيل التطبيق";
-"app_version" = "إصدار التطبيق: @%";
-"invalid_birthday" = "يُرجى إدخال تاريخ ميلادك:";
-"tap_to_accept_the_agreement" = "اضغط للموافقة على الاتفاقية";
-"send" = "إرسال";
-"forgot_password_ok" = "يُرجى الرجوع إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور";
-"forgot_password_error" = "خطأ في إعادة تعيين كلمة المرور";
-"invalid_email" = "يُرجى إدخال بريد إلكتروني صالح";
-"invalid_phone_number" = "يُرجى إدخال رقم هاتف صالح";
-"navigation_ended" = "الخطوة الأخيرة: بعد d% مترًا، سيكون المقصد على @%";
-"step" = "خطوة d%.";
-"location_name" = "اسم الموقع";
-"address" = "العنوان";
-"added_successfully" = "أضيفت @% بنجاح";
-"nearby_stations_warning" = "خاصية المحطات القريبة متوفرة لإسطنبول فقط وتقدمها IETT. بتوصيلك لجهاز WeWALK، يمكنك استخدام هذه الخاصية عن طريق القائمة الصوتية.";
-"your_location" = "موقعي: @%";
-"tap_to_go_to_settings_to_enable_location_permission" = "اضغط للذهاب إلى الإعدادات لتفعيل السماح بتحديد الموقع";
-"voice_search" = "البحث الصوتي";
-"165" = "165 سم";
-"150" = "150 سم";
-"135" = "135 سم";
-"110" = "110 سم";
-"95" = "95 سم";
-"80" = "80 سم";
-"turn_led_on" = "تشغيل الليد";
-"turn_led_off" = "إيقاف تشغيل الليد";
-"distance_warning_info" = "ستسمع صوت تحذير عندما يكون WeWALK وهاتفك بعيدين عن بعضهما البعض.";
-"swipe_to_exit" = "مرر أصبعك للخروج";
-"start" = "بدء";
-"close" = "إغلاق";
-"try_gesture_training" = "هل ترغب في معرفة كيفية استخدام لوحة لمس WeWALK؟";
-"search_countries" = "ابحث عن البلدان";
-"bold_fonts" = "خطوط داكنة";
-"NSNotificationUsageDescription" = "نستعمل الإشعارات لاطلاعك على أخر التطورات";
-"current_step" = "المرحلة الحالية %d ";
-"new_version_available_title" = "تحديث جديد متاح!";
-"new_version_available_text" = "حدّث تطبيقك للحصول على تجربة سلسة وميزات جديدة.";
+say -v Laila نهاية التوجيه -o ar_navigation_ended.aiff
+say -v Laila اذهب الى هناك -o ar_go_there.aiff
+say -v Laila أنا هنا -o ar_i_am_here.aiff
+say -v Laila حُفظ الموقع -o ar_location_saved.aiff
+say -v Laila جاري التحميل -o ar_loading.aiff
+say -v Laila لا يمكن تحديد الموقع -o ar_couldnt_retrieve_location.aiff
+say -v Laila إنهاء التوجيه -o ar_end_navigation.aiff
+say -v Laila التوجيه -o ar_navigation.aiff
+say -v Laila تجديد -o ar_refresh.aiff
+say -v Laila الموقع محفوظ بالفعل -o ar_location_already_saved.aiff
+say -v Laila 33% -o ar_33.aiff
+say -v Laila 66% -o ar_66.aiff
+say -v Laila 100% -o ar_100.aiff
+say -v Laila ابحث عن هاتفي -o ar_find_my_phone.aiff
+say -v Laila احفظ موقعي -o ar_save_location.aiff
+say -v Laila أين أنا؟ -o ar_where_am_i.aiff
+say -v Laila المحطات القريبة -o ar_nearby_stops.aiff
+say -v Laila 165 -o ar_165.aiff
+say -v Laila 150 -o ar_150.aiff
+say -v Laila 135 -o ar_135.aiff
+say -v Laila 110 -o ar_110.aiff
+say -v Laila 95 -o ar_95.aiff
+say -v Laila 80 -o ar_80.aiff
+say -v Laila كشف العوائق -o ar_obstacle_detection.aiff
+say -v Laila مستوى الصوت -o ar_sound_level.aiff
+say -v Laila أغلقت القائمة -o ar_menu_closed.aiff
+say -v Laila تشغيل الليد -o ar_turn_led_on.aiff
+say -v Laila إيقاف تشغيل الليد -o ar_turn_led_off.aiff
+say -v Laila مرر أصبعك للخروج -o ar_swipe_to_exit.aiff
+say -v Laila بدء -o ar_start.aiff
+say -v Laila حفظ خطأ -o ar_save_error.aiff
+say -v Laila احفظ هنا -o ar_save_here.aiff
+say -v Laila لا انترنت -o ar_no_internet.aiff
+say -v Laila الموقع خارج -o ar_location_off.aiff
+ and stored in databases, and if necessary, may be shared with relevant public institutions and organizations and third parties that are our solution partners as required by our business relations In accordance with the European Data Protection Regulation (\"GDPR\") and the Law No. 6698 on the Protection of Personal Data (\"KVKK\"), and necessary information related to above is provided to me in accordance with the provisions of the relevant legislation, and that I have read and understood each page of the Policy in full. \nExcept in cases where processing is permitted under GDPR and KVKK legislations, if you do not accept this Text which requires your acceptance for the processing of any personal data Including your special personal data mentioned above, we hereby inform you that we will not be able to provide you with the necessary and sufficient service in terms of our processes that require your express consent and that our commercial and operational activities will be adversely affected."
+"credits" = "الرصيد"
+"default_theme" = "السمة الافتراضية"
+"delete_location" = "حذف الموقع"
+"alexa_info" = "أليكسا مساعدة صوتية مطورة بواسطة أمازون متاحة باللغات الإنجليزية والألمانية واليابانية يمكنك استخدام امازون إليكسا في WeWALK الخاصة بك بعد تسجيل الدخول إلى حسابك على أمازون. يمكنك زيارة موقع أمازون إليكسا لمعرفة اللغات المدعومة حاليًا."
+"obstacle_detection_info" = "اقترب ببطء مستقيمًا من جدار مرتفع بواسطة WeWALK الخاصة بك، لتجربة مختلف التحذيرات الخاصة بمسافة كشف العوائق. اختر خيار تحذير مسافة العوائق الذي سيعطيك أدق تحذير في أنسب وقت. مسافة التحذير 135 سم لشخص متوسط الطول. يمكنك اختبار مسافة التحذير التي تظن أنه الأنسب لك في مكان واسع."
+"voice_feedback_info" = "عند تفعيل هذه الخاصية؛ سوف يتم الإعلان عن توجيهات هذه المرحلة كلما مشيت عدد محددًا من الخطوات أوكلما مرت فترة زمنية محددة."
+"low_charge" = "تعطي تحذيرًا صوتيًا عند انخفاض شحن البطارية."
+"plugged_out" = "تعطي تحذيرًا صوتيًا عند فصل الجهاز عن الكهرباء."
+"plugged_in" = "تعطي تحذيرًا صوتيًا عند وصل الجهاز بالكهرباء."
+"turn_WeWALK_off" = "الضغط على زر الطاقة مع الاستمرار بالضغط يغلق WeWALK."
+"distance_warning_info" = "تعطي تحذيرًا صوتيًا عند ابتعاد الهاتف مسافة محدد عن الـ WeWALK."
+"tap_and_hold_horn" = "يُشغل بوق الجهاز بالنقر مرة واحدة ثم الاستمرار بالضغط على لوحة اللمس. تعمل هذه الخاصية فقط إذا كانت تفضيلات البوق مفعلة في علامة تبويب التفضيلات."
+"where_is_my_WeWALK_explainer" = "تعطي تنبيهًا صوتيًا عند الضغط على زر \"أين WeWALK الخاص بي\" في تطبيق الهاتف."
+"turn_light_off_explainer" = "يُطفأ ضوء الجهاز عند ضم أصبعين أو إبعادهما عن بعضها على طول قطر لوحة اللمس."
+"turn_light_on_explainer" = "يشغل ضوء الجهاز عند ضم أصبعين أو إبعادهما عن بعضها على طول قطر لوحة اللمس."
+"touchpad_release" = "يُلغى تنشيط الميكروفون عند رفع الأصابع من على لوحة اللمس."
+"tap_and_hold_microphone" = "يُنشّط الميكروفون عند الضغط مع الاستمرار على لوحة اللمس."
+"turn_WeWALK_on" = "الضغط على زر الطاقة مع الاستمرار بالضغط يُشغّل WeWALK."
+"device_settings" = "تفضيلات الجهاز"
+"sleep_mode_explainer" = "تدخل WeWALK في وضع النوم عندما تبقى ساكنة."
+"awake_explainer" = "تستيقظ WeWALK عندما تبدأ بالحركة."
+"email_or_phone_number" = "البريد الإلكتروني/الهاتف"
+"email_placeholder" = "البريد الإلكتروني"
+"edit_location" = "تعديل الموقع"
+"fail_text_2" = "عفوًا، هل يمكنك المحاولة مجددًأ؟"
+"fail_text_3" = "من الأرجح أنك تواجه مشكلة في هذه الإشارة."
+"fail_text_1" = "حدث خطأ ما. عفوًا، هل يمكنك المحاولة مجددًأ؟"
+"finish_screen" = "إنهاء التدريب"
+"forgot_password" = "نسيت كلمة السر"
+"name_placeholder" = "الاسم الكامل"
+"gesture_desc_1" = "الإشارة 1 من 8 - التمرير لليسار: مرر أصبعًا واحدًا من اليمين لليسار على لوحة اللمس الخاصة ب WeWALK."
+"gesture_name_1" = "مرر أصبعك من اليمين لليسار"
+"gesture_desc_2" = "الإشارة 2 من 8 - التمرير لليمين: مرر أصبعًا واحدًا من اليسار لليمين على لوحة اللمس الخاصة ب WeWALK."
+"gesture_name_2" = "مرر أصبعك من اليسار لليمين"
+"gesture_desc_3" = "الإشارة 3 من 8 - مرر للخلف: مرر أصبعًا واحدًا من الأمام (من جهة حساس تحديد العوائق) إلى تجاهك (قمة WeWALK)."
+"gesture_name_3" = "مرر أصبعك للخلف"
+"gesture_desc_4" = "الإشارة 4 من 8 - مرر للأمام: مر أصبعًا واحداً من الخلف (من قمة WeWALK) إلى الأمام (باتجاه حساس تحديد العوائق)."
+"gesture_name_4" = "مرر أصبعك للأمام"
+"gesture_desc_5" = "الإشارة 5 من 8 - النقر المزدوج: انقر على لوحة اللمس بإصبعٍ واحد، ارفع إصبعك ثم انقر مرة أخرى بعد نصف ثانية."
+"gesture_name_5" = "انقر نقرة مزدوجة"
+"gesture_desc_6" = "الإشارة 6 من 8 الميكروفون / وبوق التنبيه: مرة أخرى، انقر نقرة مزدوجة بإصبعِ واحدِ كما في الإشارة السابقة. ولكن اترك إصبعك ملامسًا للوحة اللمس ولا ترفعه بعد النقرة الثانية. ستسمع صوتًا عند أداء هذه الإشارة. بعد سماعك إياه؛ انتظر لوهلة قبل رفع إصبعك من على لوحة اللمس. يمكن استخدام هذه الإشارة لخاصيتي الميكروفون وبوق التنبيه."
+"gesture_name_6" = "الميكروفون أو بوق التنبيه"
+"gesture_desc_7" = "الإشارة 7 من 8 - ضم الأصابع أو إبعادهما: ضع إصبعين على ركني لوحة اللمس بحيث لا يخرجا عنها. ضم إصبعيك تجاه بعضهما البعض على طول قطر لوحة اللمس بحركة مشابهة لحركة القرص. أو ضع أصبعين متلامسين في منتصف لوحة اللمس وباعد بينهما قطريًا تجاه الركنين. ستسمع صوتًا عند أداء هذه الإشارة. يضيئ ضوء الجهاز وينطفئ عند أداء هذه الإشارة."
+"gesture_name_7" = "تشغيل/إيقاف تشغيل الليد"
+"gesture_desc_8" = "الإشارة 8 من 8 - تمرير أصبعين: ضع أصبعين على لوحة اللمس مع ترك مسافة نصف سنتيمتر بينهما. مرر الأصبعين من الأمام للخلف. عند أداء هذه الإشارة، سيعمل حساس الأمواج فوق الصوتية وإن كنت أمام عائق مثل حائط أو ما شابهه ستبدأ WeWALK في الاهتزاز. أو تتوقف خاصية كشف العوائق ويتوقف الاهتزاز."
+"gesture_name_8" = "تشغيل/إيقاف تشغيل كشف العوائق"
+"tap_to_update_your_location" = "تحديث موقعي"
+"get_upcoming_buses" = "اعرف الحافلات القادمة"
+"give_feedback" = "هل لديك سؤال؟"
+"go_there" = "اذهب الى هناك"
+"home" = "الصفحة الرئيسية"
+"how_to_purchase_WeWALK" = "كيف يمكنني شراء WeWALK؟"
+"i_read" = "قرأت وأوافق"
+"i_am_here" = "أنا هنا"
+"version_history" = "تاريخ الإصدار"
+"invalid_login_infomation" = "المعلومات المدخلة غير صالحة"
+"cancel" = "إلغاء"
+"distance_warning" = "تحذير المسافة"
+"disability_placeholder" = "نسبة فقدان البصر"
+"obstacle_detection_distance" = "مسافة اكتشاف العوائق"
+"enter_email" = "يُرجى إدخال بريدك الإلكتروني"
+"long_distance" = "يبعد الموقع الذي تريد الحصول على توجيهات للوصول مسافة 2.5 كم أو أكثر. قد تضطر للمشي أكثر من 30 دقيقة. هل مازلت تود الحصول على توجيهات الوصول؟"
+"WeWALK_fully_charged" = "WeWALK مشحونة بالكامل، يمكنك نزعها من الشحن."
+"gesture_training" = "تمرين الإشارة"
+"get_navigation" = "الحصول على التوجيهات"
+"horn" = "بوق التنبيه"
+"device_sounds" = "أصوات الجهاز"
+"legal" = "الجانب القانوني"
+"user_manual" = "دليل المستخدم"
+"user_agreement" = "الاتفاقية"
+"privacy_policy" = "اتفاقية الخصوصية"
+"log_out" = "تسجيل الخروج"
+"set_voice_feedback" = "تفضيلات تكرار التوجيهات"
+"ok" = "موافق"
+"saved_locations" = "المواقع المحفوظة"
+"WeWALK_sound_level" = "مستوى صوت WeWALK"
+"updated_successfully" = "لقد حدثت حسابك بنجاح"
+"weight_placeholder" = "الوزن"
+"you_did" = "لقد فعلت: {{A%d%d"
+"change_language" = "اختر اللغة"
+"left" = "يسار"
+"loading" = "جاري التحميل"
+"finding_your_location" = "جاري تحديد الموقع"
+"no_location_services" = "خاصية تحديد الموقع مغلقة"
+"log_in" = "تسجيل الدخول إلى WeWALK"
+"login" = "تسجيل الدخول"
+"ferry-train" = "بعد {{0%d%d مترًا ستجد سفينة عبارة "
+"ferry" = "بعد {{0%d%d مترًا ستجد سفينة عبارة "
+"fork-left" = "بعد {{0%d%d مترًا، استمر في الطريق المتشعب لليسار"
+"fork-right" = "بعد {{0%d%d مترًا، استمر في الطريق المتشعب لليمين"
+"merge" = "بعد {{0%d%d مترًا، استمر في الطريق المندمج"
+"ramp-left" = "بعد {{0%d%d مترًا، انعطف يسارًا باتجاه المنحدر"
+"ramp-right" = "بعد {{0%d%d مترًا، انعطف يمينًا باتجاه المنحدر"
+"ramp" = "بعد {{0%d%d مترًا، استمر باتجاه المنحدر"
+"roundabout-left" = "بعد {{0%d%d مترًا، انعطف يسارًا عند الدوار"
+"roundabout-right" = "بعد {{0%d%d مترًا، انعطف يمينًا عند الدوار"
+"straight" = "استمر للأمام لمسافة {{0%d%d متر"
+"turn-left" = "بعد {{0%d%d متر انعطف يسارًا"
+"turn-right" = "بعد {{0%d%d متر، انعطف يمينًا باتجاه المنحدر"
+"turn-sharp-left" = "بعد {{0%d%d متر انعطف لأقصى اليسار"
+"turn-sharp-right" = "بعد {{0%d%d متر انعطف لأقصى اليمين"
+"turn-slight-left" = "بعد {{0%d%d متر تقدم تقدمًا طفيفًا"
+"turn-slight-right" = "بعد {{0%d%d متر انعطف انعطافًا طفيفًا لليمين"
+"uturn-left" = "بعد {{0%d%d متر التف إلى الخلف متجه إلى اليسار"
+"uturn-right" = "بعد {{0%d%d متر التف إلى الخلف متجه إلى اليمين"
+"end_navigation" = "إنهاء التوجيه"
+"destination_reached" = "لقد وصلت إلى وجهتك"
+"invalid_name" = "الاسم غير صالح هل يمكنك المحاولة مرة أخرى؟"
+"navigation_settings" = "تفضيلات التوجيه"
+"navigation" = "التوجيه"
+"saved_locations_placeholder" = "لا يمكن العثور على أي مواقع محفوظة يمكنك البحث عن موقع ما وإضافته باستخدام حقل البحث أعلاه، أو يمكنك ضغط زر \" احفظ موقعي الحالي\" في علامة التبويب الخاصة بالصفحة الرئيسية لحفظ موقعك الحالي."
+"no" = "لا"
+"not_connected_text" = "تحتاج إلى توصيل WeWALK الخاصة بك لإجراء التدريب. يمكنك الذهاب للصفحة الرئيسية لتوصيل WeWALK."
+"younger_than_16" = "يجب ألا يقل عمرك عن 16 عامًا لتدير البيانات الشخصية."
+"other_settings" = "التفضيلات الأخرى"
+"min_6_characters" = "يجب ألا تقل كلمة المرور عن 6 أحرف"
+"password" = "أدخل كلمة مرورك"
+"new_password" = "كلمة المرور"
+"phone_number_placeholder" = "الهاتف"
+"play_sound" = "تشغيل الصوت"
+"settings" = "التفضيلات"
+"profile" = "الحساب"
+"promoting_text_1" = "رائع! هل يمكنك المحاولة مجددًأ؟"
+"promoting_text_3" = "مرة أخرى أخيرة..."
+"promoting_text_2" = "أنت تتحسن بالفعل. هل يمكنك المحاولة مرة أخرى؟"
+"navigation_preparation" = "امشِ {{0%d%d مترًا لنقطة البداية"
+"restart_navigation" = "إعادة بدء التوجيه"
+"refresh" = "تجديد"
+"change_password" = "إعادة تعيين كلمة المرور"
+"right" = "يمين"
+"save_current_location" = "احفظ الموقع الحالي"
+"renew_password" = "تجديد كلمة المرور"
+"save" = "حفظ"
+"search" = "ابحث عن مكان"
+"location_search" = "البحث عن المواقع"
+"scanning_devices" = "البحث عن WeWALK قريبة"
+"sign_up" = "اشترك"
+"sign_up_justification" = "انضم لعائلة WeWALK باشتراكك وتمتع بالعديد من المزايا! سيمكنك الاشتراك مع WeWALK من حفظ بياناتك وإدارتها. وكذلك يمكننا التواصل معك أسرع بهذه الطريقة. يمكنك الاشتراك من البقاء على اطلاع حيال أحدث التطويرات والعديد من الخصائص المستقبلية."
+"skip" = "تخطي"
+"33_percent" = "33%"
+"66_percent" = "66%"
+"100_percent" = "100%"
+"step_done" = "الخطوة فعلت"
+"start_navigation" = "بدء التوجيه"
+"start_training" = "بدء التدريب"
+"stop_info_pattern" = "{{A%d%d({{A%d%d)\n\nمسافة: {{0%d%d متر"
+"text_size" = "حجم النص"
+"consent_title" = "البيانات الشخصية"
+"try_again" = "حاول مرة أخرى"
+"next_gesture" = "الإشارة التالية"
+"tutorial" = "محتوى تعريفي"
+"update_WeWALK" = "تحديث جهاز WeWALK الخاص بك"
+"update_profile" = "تحديث الحساب الشخصي"
+"version_history" = "تاريخ الإصدار"
+"visual_preferences" = "التفضيلات البصرية"
+"accessibility_sample_text" = "هذا نص تجريبي سيختلف حجم ولون النص مع تعديلك للتفضيلات البصرية"
+"voice_menu_dialog_found_phone" = "وجدت هاتفي"
+"find_my_phone" = "ابحث عن هاتفي"
+"save_location" = "احفظ موقعي"
+"where_am_i" = "أين أنا؟"
+"nearby_stations" = "المحطات القريبة"
+"obstacle_detection" = "كشف العوائق"
+"sound_level" = "مستوى الصوت"
+"up_to_date_message" = "لا يوجد تحديث جديد. جهازك مُحدّث."
+"turn_bluetooth_on" = "لكي تعثر على جهاز WeWALK الخاص بك؛ يجب أولًا تشغيل بلوتوث الهاتف."
+"please_read_and_accept_the_agreement" = "اقبل الشروط للمتابعة"
+"warn_unknown_error" = "حدث خطأ غير متوقع"
+"weight" = "الوزن: {{A%d%d"
+"welcome_text" = "مرحبًا، أهلا بك في تدريب الإشارة الخاص ب WeWALK يمكنك تعلم إشارات WeWALK بالتدرب على لوحة اللمس لتصبح خبيرًا بها. يمكنك أيضًا الوصول لهذا التدريب لاحقًا من علامة تبويب محتوى تعريفي."
+"well_done" = "رائع، لقد أتممنا الأمر. أنت الآن خبير."
+"connect_WeWALK" = "توصيل WeWALK"
+"connected" = "فصل WeWALK"
+"device_version" = "إصدار الجهاز: {{A%d%d"
+"where_is_my_WeWALK" = "أين WeWALK الخاصة بي؟"
+"language_selection" = "تفضيلات اللغة"
+"yes" = "نعم"
+"fifteenSecs" = "كل 15 ثانية"
+"fortyMeters" = "كل 40 مترًا"
+"noFeedback" = "لا تكرر الأمر"
+"sixtyMeters" = "كل 60 مترًا"
+"sixtySecs" = "كل دقيقة"
+"thirtySecs" = "كل 30 ثانية"
+"twentyMeters" = "كل 20 مترًا"
+"NSBluetoothAlwaysUsageDescription" = "نستخدم البلوتوث لتوصيل WeWALK"
+"NSBluetoothPeripheralUsageDescription" = "نستخدم البلوتوث لتوصيل WeWALK"
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار \"دائمًا\""
+"NSLocationAlwaysUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار \"دائمًا\""
+"NSLocationUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار \"دائمًا\""
+"NSLocationWhenInUseUsageDescription" = "نحتاج الوصول إلى خدمات تحديد المكان لكي نعطيك التوجيهات ونخبرك أين أنت. للحصول على التوجيهات بينما هاتفك في جيبك؛ يجب اختيار خيار \"دائمًا\""
+"NSMicrophoneUsageDescription" = "ينبغي الحصول على تصريح استخدام الميكروفون لاستخدام الأوامر الصوتية."
+"NSSpeechRecognitionUsageDescription" = "ينبغي الحصول على تصريح خاصية التعرف على الصوت لاستخدام خاصية البحث الصوتي."
+"go_to_settings" = "الذهاب إلى الإعدادات"
+"no_location_permission" = "لم تعط تصريحًا للوصول إلى موقعك. يُرجى تشغيلها على إعدادات هاتفك."
+"authorize_speech_recognition" = "يُرجى التصريح باستخدام خاصية التعرف على الصوت من إعدادات هاتفك."
+"next" = "التالي"
+"switch_on" = "تشغيل"
+"switch_off" = "إيقاف تشغيل"
+"latest_changelog" = "<style>
+    body {
+        font-family: sans-serif;
+        line-height: 2;
+    %d
+</style>
+<h1>ما الجديد في 1.7.0؟</h1>
+<ul>
+    <li>لقد تم حل مشكلة 0 خطوات 0 متر تحدث أثناء التنقل.
+</li>
+    <li>لقد أضفنا تفضيل اختيار المدينة للنقل العام. مرة أخرى ، إسطنبول هي المدينة المتاحة حاليًا ، ونحن نعمل على إضافة مدن جديدة.
+
+</li>
+    <li>تم حل المشكلة أثناء تغيير اللغة. كانت هذه المشكلة تحدث أيضًا لأن WeWALK يتحدث لغة أجنبية.
+    </li>
+    <li>تم حل مشكلة \"خطأ غير متوقع\" أثناء تسجيل الدخول إلى Amazon Alexa.
+    </li>
+    <li>تم إصلاح العديد من الأخطاء الأخرى.</li>
+    <li>مرة أخرى ، قمنا بزيادة الأداء العام للتطبيق.
+    </li>
+</ul>
+
+
+
+
+
+"
+"tap_to_set_your_country_code" = "اضغط لضبط رمز البلد"
+"menu_has_closed" = "أغلقت القائمة"
+"name" = "الاسم: {{A%d%d {{A%d%d"
+"email" = "البريد الإلكتروني: {{A%d%d"
+"phone" = "الهاتف: {{A%d%d"
+"password_accessibility" = "كلمة المرور: {{A%d%d"
+"disability_ratio" = "نسبة الإعاقة: {{A%d%d"
+"device_not_found" = "لم يمكن العثور على أي WeWALK"
+"please_restart_the_app" = "يُرجى إعادة تشغيل التطبيق"
+"app_version" = "إصدار التطبيق: {{A%d%d"
+"invalid_birthday" = "يُرجى إدخال تاريخ ميلادك:"
+"tap_to_accept_the_agreement" = "اضغط للموافقة على الاتفاقية"
+"send" = "إرسال"
+"forgot_password_ok" = "يُرجى الرجوع إلى بريدك الإلكتروني لإعادة تعيين كلمة المرور"
+"forgot_password_error" = "خطأ في إعادة تعيين كلمة المرور"
+"invalid_email" = "يُرجى إدخال بريد إلكتروني صالح"
+"invalid_phone_number" = "يُرجى إدخال رقم هاتف صالح"
+"navigation_ended" = "الخطوة الأخيرة: بعد {{0%d%d مترًا، سيكون المقصد على {{A%d%d"
+"step" = "خطوة {{0%d%d."
+"location_name" = "اسم الموقع"
+"address" = "العنوان"
+"added_successfully" = "أضيفت {{A%d%d بنجاح"
+"nearby_stations_warning" = "خاصية المحطات القريبة متوفرة لإسطنبول فقط وتقدمها IETT. بتوصيلك لجهاز WeWALK، يمكنك استخدام هذه الخاصية عن طريق القائمة الصوتية."
+"your_location" = "موقعي: {{A%d%d"
+"tap_to_go_to_settings_to_enable_location_permission" = "اضغط للذهاب إلى الإعدادات لتفعيل السماح بتحديد الموقع"
+"voice_search" = "البحث الصوتي"
+"165" = "165 سم"
+"150" = "150 سم"
+"135" = "135 سم"
+"110" = "110 سم"
+"95" = "95 سم"
+"80" = "80 سم"
+"turn_led_on" = "تشغيل الليد"
+"turn_led_off" = "إيقاف تشغيل الليد"
+"distance_warning_info" = "ستسمع صوت تحذير عندما يكون WeWALK وهاتفك بعيدين عن بعضهما البعض."
+"swipe_to_exit" = "مرر أصبعك للخروج"
+"start" = "بدء"
+"close" = "إغلاق"
+"try_gesture_training" = "هل ترغب في معرفة كيفية استخدام لوحة لمس WeWALK؟"
+"search_countries" = "ابحث عن البلدان"
+"bold_fonts" = "خطوط داكنة"
+"NSNotificationUsageDescription" = "نستعمل الإشعارات لاطلاعك على أخر التطورات"
+"current_step" = "المرحلة الحالية {{0%d%d "
+"new_version_available_title" = "تحديث جديد متاح!"
+"new_version_available_text" = "حدّث تطبيقك للحصول على تجربة سلسة وميزات جديدة."
+"update" = "تحديث"
+"city_preferences" = "تفضيلات النقل العام"
+"select_city" = "اختر مدينة"
+"public_transport_description" = "نحن نقدم وسائل النقل العام من خلال الخدمات التي تقدمها مدينتك. باستخدام هذا الخيار ، يمكنك اختيار المدينة التي تعيش فيها."
+"public_transport_not_available_warning" = "حاليًا ، تتوفر ميزات النقل العام في إسطنبول فقط. نحن نعمل على تنفيذ مدن جديدة! يرجى الاتصال بنا لمطالب المدن المختلفة."
+"found_my_phone_notification" = "افتح هذا الإخطار لإسكات هاتفك."
+"other" = "آخر"
+"istanbul" = "اسطنبول"
+"no_stops_found_near_you" = "لا توقف وجدت بالقرب منك"
+"double_tap_to_copy" = "انقر نقرا مزدوجا لنسخ"
