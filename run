@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd Desktop/Localization
+
+node index
+
+mv Turkish.strings Localizable.strings
+mv Localizable.strings ../wewalk-ios/WeWALK/tr.lproj
