@@ -95,7 +95,7 @@ function generateLocalization() {
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `"${key}" = "${value}"\n`;
             case "voice_menu":
-                return `say -v ${parameters[lang+"_voice_name"]} ${value} -o ${lang}_${key}.aiff\n`;
+                return `say -v ${parameters[lang+"_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
             default:
                 return;
         }

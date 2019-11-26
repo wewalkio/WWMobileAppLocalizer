@@ -6,6 +6,11 @@
 
 *.txt
 
+*.aiff
+*.wav
+
+sounds/
+
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
