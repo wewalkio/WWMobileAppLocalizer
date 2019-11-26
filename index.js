@@ -28,6 +28,8 @@ let download = () => new Promise((resolve, reject) => {
                 reject('Error');
             })
             .on('close', () => {
+                fs.mkdir("ios", (e)=>{if (e && e.code != 'EEXIST') console.log(e)});
+                fs.mkdir("android", (e)=>{if (e && e.code != 'EEXIST') console.log(e)});
                 generateLocalization();
 
             });
@@ -126,7 +128,7 @@ function generateLocalization() {
                     fileName = `ios/${lang}.strings`;
                 }
                 if (platform === "ios_info_plist") {
-                    fileName = `ios/${lang}_info_plist.strings`;
+                    fileName = `ios/${lang}.plist`;
                 }
                 if (platform === "android") {
                     fileName = `android/strings-${lang}.xml`;
