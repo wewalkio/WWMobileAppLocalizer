@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mkdir sounds && cp voice_menu.txt sounds/voice_menu && cd sounds && chmod +x voice_menu && ./voice_menu && for f in *.aiff; do ffmpeg -i "$f" -ar 16000 -sample_fmt s16 "${f%.*}.wav"; done
+mkdir sounds && cp voice_menu.txt sounds/voice_menu && cd sounds && chmod +x voice_menu && ./voice_menu && for f in *.aiff; do ffmpeg -i "$f" -ar 8000 -sample_fmt s16 "${f%.*}.wav"; done && mkdir wav && mkdir aiff && mv *.wav wav/ && mv *.aiff aiff/

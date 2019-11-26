@@ -29,7 +29,7 @@ let download = () => new Promise((resolve, reject) => {
             })
             .on('close', () => {
                 generateLocalization();
-                
+
             });
     });
 });
@@ -49,13 +49,14 @@ function generateLocalization() {
     let parameters = XLSX.utils.sheet_to_json(parameterSheet)[0];
 
     let keys = list.shift(); // Retuns language names
-    const platforms = ["android", "ios", "voice_menu"];
+    const platforms = ["android", "ios", "voice_menu", "ios_info_plist"];
 
     let langCodes = Object.keys(keys).splice(4); // Why 4: #, android, ios, voice_menu
     let resource = {
         android: {},
         ios: {},
-        voice_menu: {}
+        voice_menu: {},
+        ios_info_plist: {},
     };
 
     for (var i in langCodes) {
@@ -64,6 +65,7 @@ function generateLocalization() {
         resource.android[langCode] = "";
         resource.ios[langCode] = "";
         resource.voice_menu[langCode] = "";
+        resource.ios_info_plist[langCode] = "";
     }
 
     /*
@@ -75,7 +77,10 @@ function generateLocalization() {
             let langCode = langCodes[j];
             if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]);
             if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode]);
-            if (!!row.ios_key) resource.ios[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);
+            if (!!row.ios_key) {
+                if (String(row.ios_key).startsWith("NS")) resource.ios_info_plist[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);
+                else resource.ios[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);
+            }
         }
     }
 
@@ -83,17 +88,18 @@ function generateLocalization() {
     Text Helper Funtion
     */
     function processText(platform, lang, key, value) {
+        value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
-                value = String(value).replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
+                value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
-                value = String(value).replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
+                value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(A)\}\}', '%@'); //{{A}}
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
-                return `"${key}" = "${value}"\n`;
+                return `"${key}" = "${value}";\n`;
             case "voice_menu":
                 return `say -v ${parameters[lang+"_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
             default:
@@ -117,15 +123,19 @@ function generateLocalization() {
                 let data = resource[platform][lang];
 
                 if (platform === "ios") {
-                    fileName = keys[lang] + ".strings";
+                    fileName = `ios/${lang}.strings`;
+                }
+                if (platform === "ios_info_plist") {
+                    fileName = `ios/${lang}_info_plist.strings`;
                 }
                 if (platform === "android") {
-                    fileName = `strings-${lang}.xml`;
-                    let start = '<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>';
-                    let close = '</resources>'
+                    fileName = `android/strings-${lang}.xml`;
+                    let start = '<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>\n';
+                    let close = '</resources>';
                     data = start + data + close;
                 }
                 if (platform === "voice_menu") {
+                    fileName = "voice_menu.txt";
                     voice_menu_data += data + "\n";
                 }
                 fs.writeFile(fileName, data, (e) => {
