@@ -93,8 +93,13 @@ function generateLocalization() {
         value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
-                value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
-                value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
+                if (lang === "ar"){
+                    value = value.replaceAll('\{\{(0)\}\}', 'd%'); //{{0}}
+                    value = value.replaceAll('\{\{(A)\}\}', 's%'); // {{A}}
+                } else{
+                    value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
+                    value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
+                }
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
