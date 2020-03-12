@@ -38,6 +38,8 @@ let download = () => new Promise((resolve, reject) => {
 
 download();
 
+//generateLocalization();
+
 function generateLocalization() {
     /*
     Init
@@ -77,7 +79,7 @@ function generateLocalization() {
         let row = list[i];
         for (var j in langCodes) {
             let langCode = langCodes[j];
-            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]);
+            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]); //console.log(processText("voice_menu", langCode, row.voice_menu_key, row[langCode]));
             if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode]);
             if (!!row.ios_key) {
                 if (String(row.ios_key).startsWith("NS")) resource.ios_info_plist[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);
@@ -91,18 +93,29 @@ function generateLocalization() {
     */
     function processText(platform, lang, key, value) {
         value = String(value).replaceAll("\n", "\\n");
+        console.log(value);
         switch (platform) {
             case "android":
                 if (lang === "ar"){
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', 'd$2%');//{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', 's$2%');//{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', 'd%'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', 's%'); // {{A}}
                 } else{
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2d');//{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2s');//{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
                 }
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
+                console.log(value);
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
+                // TODO
+                // Check this with an iOS developer
+                //
+                value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2d'); //{{0-n}}
+                value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2@'); //{{A-n}} 
                 value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(A)\}\}', '%@'); //{{A}}
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
@@ -155,6 +168,8 @@ function generateLocalization() {
         }
     }
 }
+
+//generateLocalization();
 
 /*
 NOTES
