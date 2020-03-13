@@ -93,7 +93,6 @@ function generateLocalization() {
     */
     function processText(platform, lang, key, value) {
         value = String(value).replaceAll("\n", "\\n");
-        console.log(value);
         switch (platform) {
             case "android":
                 if (lang === "ar"){
@@ -110,7 +109,6 @@ function generateLocalization() {
                     value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
                 }
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
-                console.log(value);
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
                 // TODO
