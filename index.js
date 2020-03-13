@@ -103,8 +103,8 @@ function generateLocalization() {
                     value = value.replaceAll('\{\{(0)\}\}', 'd%'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', 's%'); // {{A}}
                 } else{
-                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$$$2d');//{{0-n}}
-                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$$$2s');//{{A-n}}
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d');//{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$s');//{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
                 }
