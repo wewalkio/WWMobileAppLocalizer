@@ -97,6 +97,8 @@ function generateLocalization() {
         switch (platform) {
             case "android":
                 if (lang === "ar"){
+                    // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
+                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'd$2%');//{{O-n}}
                     value = value.replaceAll('\{\{(0-)([0-9])\}\}', 'd$2%');//{{0-n}}
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', 's$2%');//{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', 'd%'); //{{0}}
@@ -114,6 +116,7 @@ function generateLocalization() {
                 // TODO
                 // Check this with an iOS developer
                 //
+                value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'd$2%');//{{O-n}}
                 value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2d'); //{{0-n}}
                 value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2@'); //{{A-n}} 
                 value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
