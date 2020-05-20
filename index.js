@@ -112,14 +112,17 @@ function generateLocalization() {
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
-                // TODO
-                // Check this with an iOS developer
-                //
-                value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'd$2%');//{{O-n}}
-                value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2d'); //{{0-n}}
-                value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2@'); //{{A-n}} 
+                if (lang === "ar"){
+                    // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
+                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'arabicparam:%$2$d');//{{O-n}}
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', 'arabicparam:%$2$d%'); //{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', 'arabicparam:%$2$@'); //{{A-n}} 
+                } else{
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d'); //{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$@'); //{{A-n}} 
+                }
                 value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
-                value = value.replaceAll('\{\{(A)\}\}', '%@'); //{{A}}
+                value = value.replaceAll('\{\{(A)\}\}', '%@'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `"${key}" = "${value}";\n`;
             case "voice_menu":
@@ -143,12 +146,16 @@ function generateLocalization() {
             for (var j in langCodes) {
                 let lang = langCodes[j];
                 let data = resource[platform][lang];
-
+                fs.promises.mkdir(`ios/${lang}.lproj`, { recursive: true }).catch(console.error);
                 if (platform === "ios") {
-                    fileName = `ios/${lang}.strings`;
+                    fileName = `ios/${lang}.lproj/Localizable.strings`;
                 }
                 if (platform === "ios_info_plist") {
-                    fileName = `ios/${lang}.plist`;
+                    fileName = `ios/${lang}.lproj/Info.plist`;
+                    infoPlistFileName = `ios/${lang}.lproj/infoPlist.strings`;
+                    fs.writeFile(infoPlistFileName, data, (e) => {
+                        if (e) console.log(e);
+                    });
                 }
                 if (platform === "android") {
                     fileName = `android/strings-${lang}.xml`;
