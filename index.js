@@ -3,9 +3,10 @@ Requirements
 */
 let XLSX = require('xlsx');
 let fs = require('fs');
-var https = require('https');
+// var https = require('https');
+const { http, https } = require('follow-redirects');
 
-var file = fs.createWriteStream("lokalizasyon.xlsx");
+
 let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS45lwMo_RMW9pPSPPHBRhjTSjt4hzJkb2i5EE_GMkNbgJEpwCl6AvLftLXi41qvLgtb1KGpyutIdAl/pub?output=xlsx';
 
 // Replace All Method
@@ -15,6 +16,7 @@ String.prototype.replaceAll = function (search, replacement) {
 };
 
 let download = () => new Promise((resolve, reject) => {
+    var file = fs.createWriteStream("lokalizasyon.xlsx");
     https.get(url, function (res) {
         console.log("Downloading File");
         res.on('data', function (data) {
