@@ -115,6 +115,7 @@ function generateLocalization() {
                 if (lang === "ar"){
                     // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
                     value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'arabicparam:%$2$d');//{{O-n}}
+                    value = value.replaceAll('\{\{(O)([0-9])\}\}', 'arabicparam:%$2$d');//{{O-n}}
                     value = value.replaceAll('\{\{(0-)([0-9])\}\}', 'arabicparam:%$2$d%'); //{{0-n}}
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', 'arabicparam:%$2$@'); //{{A-n}} 
                 } else{
