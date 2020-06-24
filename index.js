@@ -150,8 +150,6 @@ function generateLocalization() {
                 let lang = langCodes[j];
                 let data = resource[platform][lang];
                 fs.promises.mkdir(`ios/${lang}.lproj`, { recursive: true }).catch(console.error);
-                fs.promises.mkdir(`android/values`, { recursive: true }).catch(console.error);
-                fs.promises.mkdir(`android/values-${lang}`, { recursive: true }).catch(console.error);
                 if (platform === "ios") {
                     fileName = `ios/${lang}.lproj/Localizable.strings`;
                 }
@@ -164,11 +162,13 @@ function generateLocalization() {
                 }
                 if (platform === "android") {
                     if (lang === "en") {
-                        fileName = `android/values/strings.xml`;
+                    fs.promises.mkdir(`android/values`, { recursive: true }).catch(console.error);
+                    fileName = `android/values/strings.xml`;
                     }
                     else
                     {
-                        fileName = `android/values-${lang}/strings.xml`;
+                    fs.promises.mkdir(`android/values-${lang}`, { recursive: true }).catch(console.error);
+                    fileName = `android/values-${lang}/strings.xml`;
                     }
                     let start = '<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>\n';
                     let close = '</resources>';
