@@ -4,7 +4,10 @@ Requirements
 let XLSX = require('xlsx');
 let fs = require('fs');
 // var https = require('https');
-const { http, https } = require('follow-redirects');
+const {
+    http,
+    https
+} = require('follow-redirects');
 
 
 let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS45lwMo_RMW9pPSPPHBRhjTSjt4hzJkb2i5EE_GMkNbgJEpwCl6AvLftLXi41qvLgtb1KGpyutIdAl/pub?output=xlsx';
@@ -30,22 +33,27 @@ let download = () => new Promise((resolve, reject) => {
                 reject('Error');
             })
             .on('close', () => {
-                fs.mkdir("ios", (e)=>{if (e && e.code != 'EEXIST') console.log(e)});
-                fs.mkdir("android", (e)=>{if (e && e.code != 'EEXIST') console.log(e)});
+                fs.mkdir("ios", (e) => {
+                    if (e && e.code != 'EEXIST') console.log(e)
+                });
+                fs.mkdir("android", (e) => {
+                    if (e && e.code != 'EEXIST') console.log(e)
+                });
                 generateLocalization();
 
             });
     });
 });
-
 download();
 
 //generateLocalization();
 
-function generateLocalization() {
+async function generateLocalization() {
     /*
     Init
     */
+
+
     let table = XLSX.readFile('lokalizasyon.xlsx');
 
     let sheet = table.Sheets[table.SheetNames[0]]; // First Sheet: Localisations
@@ -64,6 +72,8 @@ function generateLocalization() {
         voice_menu: {},
         ios_info_plist: {},
     };
+
+    await createDirectories();
 
     for (var i in langCodes) {
         let langCode = langCodes[i];
@@ -97,16 +107,16 @@ function generateLocalization() {
         value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
-                if (lang === "ar"){
+                if (lang === "ar") {
                     // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
-                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', '%$2$d');//{{O-n}}
-                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d');//{{0-n}}
-                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$s');//{{A-n}}
+                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', '%$2$d'); //{{O-n}}
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d'); //{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$s'); //{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
-                } else{
-                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d');//{{0-n}}
-                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$s');//{{A-n}}
+                } else {
+                    value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d'); //{{0-n}}
+                    value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$s'); //{{A-n}}
                     value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                     value = value.replaceAll('\{\{(A)\}\}', '%s'); // {{A}}
                 }
@@ -114,13 +124,13 @@ function generateLocalization() {
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `<string name="${key}">${value}</string>\n`;
             case "ios":
-                if (lang === "ar"){
+                if (lang === "ar") {
                     // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
-                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'arabicparam:%$2$d');//{{O-n}}
-                    value = value.replaceAll('\{\{(O)([0-9])\}\}', 'arabicparam:%$2$d');//{{O-n}}
+                    value = value.replaceAll('\{\{(O-)([0-9])\}\}', 'arabicparam:%$2$d'); //{{O-n}}
+                    value = value.replaceAll('\{\{(O)([0-9])\}\}', 'arabicparam:%$2$d'); //{{O-n}}
                     value = value.replaceAll('\{\{(0-)([0-9])\}\}', 'arabicparam:%$2$d%'); //{{0-n}}
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', 'arabicparam:%$2$@'); //{{A-n}} 
-                } else{
+                } else {
                     value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d'); //{{0-n}}
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$@'); //{{A-n}} 
                 }
@@ -149,7 +159,6 @@ function generateLocalization() {
             for (var j in langCodes) {
                 let lang = langCodes[j];
                 let data = resource[platform][lang];
-                fs.promises.mkdir(`ios/${lang}.lproj`, { recursive: true }).catch(console.error);
                 if (platform === "ios") {
                     fileName = `ios/${lang}.lproj/Localizable.strings`;
                 }
@@ -162,13 +171,12 @@ function generateLocalization() {
                 }
                 if (platform === "android") {
                     if (lang === "en") {
-                    fs.promises.mkdir(`android/values`, { recursive: true }).catch(console.error);
-                    fileName = `android/values/strings.xml`;
-                    }
-                    else
-                    {
-                    fs.promises.mkdir(`android/values-${lang}`, { recursive: true }).catch(console.error);
-                    fileName = `android/values-${lang}/strings.xml`;
+                        fs.promises.mkdir(`android/values`, {
+                            recursive: true
+                        }).catch(console.error);
+                        fileName = `android/values/strings.xml`;
+                    } else {
+                        fileName = `android/values-${lang}/strings.xml`;
                     }
                     let start = '<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>\n';
                     let close = '</resources>';
@@ -187,7 +195,27 @@ function generateLocalization() {
             });
         }
     }
+
+    async function createDirectories() {
+        for (var j in langCodes) {
+            let lang = langCodes[j];
+            if (lang === "en") {
+                await fs.promises.mkdir(`android/values`, {
+                    recursive: true
+                }).catch(console.error);
+            } else {
+                await fs.promises.mkdir(`android/values-${lang}`, {
+                    recursive: true
+                }).catch(console.error);
+            }
+            await fs.promises.mkdir(`ios/${lang}.lproj`, {
+                recursive: true
+            }).catch(console.error);
+        }
+    }
 }
+
+
 
 //generateLocalization();
 
