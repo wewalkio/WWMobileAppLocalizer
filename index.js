@@ -7,7 +7,7 @@ let fs = require('fs');
 const { http, https } = require('follow-redirects');
 
 
-let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS45lwMo_RMW9pPSPPHBRhjTSjt4hzJkb2i5EE_GMkNbgJEpwCl6AvLftLXi41qvLgtb1KGpyutIdAl/pub?output=xlsx';
+let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSaGG4eQ_l_4AR22n7POsbH48ZW2cTAnh09OVv1LFrJLs5TD8-z113gJU6ixGmKNQ/pub?output=xlsx';
 
 // Replace All Method
 String.prototype.replaceAll = function (search, replacement) {
@@ -16,7 +16,7 @@ String.prototype.replaceAll = function (search, replacement) {
 };
 
 let download = () => new Promise((resolve, reject) => {
-    var file = fs.createWriteStream("lokalizasyon.xlsx");
+    var file = fs.createWriteStream("Localization.xlsx");
     https.get(url, function (res) {
         console.log("Downloading File");
         res.on('data', function (data) {
@@ -38,15 +38,15 @@ let download = () => new Promise((resolve, reject) => {
     });
 });
 
-download();
+// download();
 
-//generateLocalization();
+generateLocalization();
 
 function generateLocalization() {
     /*
     Init
     */
-    let table = XLSX.readFile('lokalizasyon.xlsx');
+    let table = XLSX.readFile('Localization.xlsx');
 
     let sheet = table.Sheets[table.SheetNames[0]]; // First Sheet: Localisations
     let list = XLSX.utils.sheet_to_json(sheet);
@@ -125,6 +125,7 @@ function generateLocalization() {
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$@'); //{{A-n}} 
                 }
                 value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
+                value = value.replaceAll('\{\{(O)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(A)\}\}', '%@'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 return `"${key}" = "${value}";\n`;
@@ -155,7 +156,7 @@ function generateLocalization() {
                 }
                 if (platform === "ios_info_plist") {
                     fileName = `ios/${lang}.lproj/Info.plist`;
-                    infoPlistFileName = `ios/${lang}.lproj/infoPlist.strings`;
+                    infoPlistFileName = `ios/${lang}.lproj/InfoPlist.strings`;
                     fs.writeFile(infoPlistFileName, data, (e) => {
                         if (e) console.log(e);
                     });
