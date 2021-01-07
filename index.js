@@ -195,7 +195,15 @@ async function generateLocalization() {
                 if (platform === "ios_info_plist") {
                     fileName = `outputs/ios/${lang}.lproj/Info.plist`;
                     infoPlistFileName = `outputs/ios/${lang}.lproj/InfoPlist.strings`;
+                    fileName2 = `outputs/ios-plist/${lang}.lproj/Info.plist`;
+                    infoPlistFileName2 = `outputs/ios-plist/${lang}.lproj/InfoPlist.strings`;
                     fs.writeFile(infoPlistFileName, data, (e) => {
+                        if (e) console.log(e);
+                    });
+                    fs.writeFile(fileName2, data, (e) => {
+                        if (e) console.log(e);
+                    });
+                    fs.writeFile(infoPlistFileName2, data, (e) => {
                         if (e) console.log(e);
                     });
                 }
@@ -212,7 +220,14 @@ async function generateLocalization() {
                         }).catch(console.error);
                         fileName = `outputs/android/values/strings.xml`;
                     } else {
-                        fileName = `outputs/android/values-${lang}/strings.xml`;
+                        let alang = lang
+                        if (lang === "pt-BR") {
+                            alang = "pt-rBR"
+                        }
+                        else if (lang === "ro") {
+                            alang = "ro-rRO"
+                        }
+                        fileName = `outputs/android/values-${alang}/strings.xml`;
                     }
                     let start = '<?xml version="1.0" encoding="utf-8" standalone="no"?><resources>\n';
                     let close = '</resources>';
@@ -255,11 +270,21 @@ async function generateLocalization() {
                     recursive: true
                 }).catch(console.error);
             } else {
-                await fs.promises.mkdir(`outputs/android/values-${lang}`, {
+                    let alang = lang
+                    if (lang === "pt-BR") {
+                        alang = "pt-rBR"
+                    }
+                    else if (lang === "ro") {
+                        alang = "ro-rRO"
+                    }
+                await fs.promises.mkdir(`outputs/android/values-${alang}`, {
                     recursive: true
                 }).catch(console.error);
             }
             await fs.promises.mkdir(`outputs/ios/${lang}.lproj`, {
+                recursive: true
+            }).catch(console.error);
+            await fs.promises.mkdir(`outputs/ios-plist/${lang}.lproj`, {
                 recursive: true
             }).catch(console.error);
             await fs.promises.mkdir(`outputs/service`, {
