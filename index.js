@@ -9,43 +9,11 @@ const {
     https
 } = require('follow-redirects');
 
-
-let url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSaGG4eQ_l_4AR22n7POsbH48ZW2cTAnh09OVv1LFrJLs5TD8-z113gJU6ixGmKNQ/pub?output=xlsx';
-
 // Replace All Method
 String.prototype.replaceAll = function (search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
-
-let download = () => new Promise((resolve, reject) => {
-    var file = fs.createWriteStream("Localization.xlsx");
-    https.get(url, function (res) {
-        console.log("Downloading File");
-        res.on('data', function (data) {
-                file.write(data);
-            })
-            .on('end', function () {
-                file.end();
-                resolve('File downloaded');
-            })
-            .on('error', function () {
-                reject('Error');
-            })
-            .on('close', () => {
-                fs.mkdir("ios", (e) => {
-                    if (e && e.code != 'EEXIST') console.log(e)
-                });
-                fs.mkdir("android", (e) => {
-                    if (e && e.code != 'EEXIST') console.log(e)
-                });
-                generateLocalization();
-
-            });
-    });
-});
-
-// download();
 
 generateLocalization();
 
@@ -92,7 +60,7 @@ async function generateLocalization() {
         let row = list[i];
         for (var j in langCodes) {
             let langCode = langCodes[j];
-            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]); //console.log(processText("voice_menu", langCode, row.voice_menu_key, row[langCode]));
+            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]);
             if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode]);
             if (!!row.ios_key) {
                 if (String(row.ios_key).startsWith("NS"))
@@ -293,10 +261,6 @@ async function generateLocalization() {
         }
     }
 }
-
-
-
-//generateLocalization();
 
 /*
 NOTES

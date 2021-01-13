@@ -1,6 +1,6 @@
-# Localizer
+# WeWALK Mobile App Localizer
 
-This script retrieves WeWALK app localization from GSheet and prepares them to add into application directly.
+This script retrieves your app localization from excel file and prepares them to add into application directly.
 
 ## Install
 
@@ -19,7 +19,7 @@ After running ```index.js``` script, run ```./processSounds``` command from term
 
 This script will create a folder then create files inside that folder.
 
-Sounds can be processed according to this document: [WeWALK Sound Specs](https://docs.google.com/document/d/1bxShxEvYtJwUjouTUyE6q_HQcOx_UFY4-5LeAuoxIIM/edit?usp=sharing)
+Sounds can be processed according to excel file
 
 ## Known Issues
 
