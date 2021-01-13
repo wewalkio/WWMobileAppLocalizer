@@ -1,10 +1,10 @@
 *.xml
 *.strings
-*.xlsx
 *.txt
 *.aiff
 *.wav
 outputs/
+Localization.xlsx
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 
