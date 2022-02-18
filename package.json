@@ -4,7 +4,7 @@
   "description": "Generates auto to implement localized string resource from Google Sheets",
   "main": "index.js",
   "dependencies": {
-    "follow-redirects": "^1.12.1",
+    "follow-redirects": "^1.14.8",
     "https": "^1.0.0",
     "xlsx": "^0.17.0"
   },
