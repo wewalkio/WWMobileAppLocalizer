@@ -56,29 +56,35 @@ async function generateLocalization() {
     /*
     Iterating XLSX File
     */
+    let lastElem = false
     for (var i in list) {
+        if (i == list.length - 1) {
+            lastElem = true
+            console.log("lastelem" + i + " --- " + list.length)
+        }
+        // console.log("lastelem" + i + " --- " + list.length)
+
         let row = list[i];
         for (var j in langCodes) {
             let langCode = langCodes[j];
-            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode]);
-            if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode]);
+            if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode], undefined);
+            if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode], undefined);
             if (!!row.ios_key) {
-                if (String(row.ios_key).startsWith("NS"))
-                {
-                  resource.ios_info_plist[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);  
-                } 
+                if (String(row.ios_key).startsWith("NS")) {
+                    resource.ios_info_plist[langCode] += processText("ios", langCode, row.ios_key, row[langCode], undefined);
+                }
                 else {
-                    resource.ios[langCode] += processText("ios", langCode, row.ios_key, row[langCode]);
-                    resource.service[langCode] += processText("service", langCode, row.ios_key, row[langCode]);
+                    resource.ios[langCode] += processText("ios", langCode, row.ios_key, row[langCode], undefined);
+                    resource.service[langCode] += processText("service", langCode, row.ios_key, row[langCode], lastElem);
                 }
             }
         }
     }
 
-    /*
+    /*{{А-2}}
     Text Helper Funtion
     */
-    function processText(platform, lang, key, value) {
+    function processText(platform, lang, key, value, lastElem) {
         value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
@@ -124,14 +130,20 @@ async function generateLocalization() {
                 } else {
                     value = value.replaceAll('\{\{(0-)([0-9])\}\}', '%$2$d'); //{{0-n}}
                     value = value.replaceAll('\{\{(A-)([0-9])\}\}', '%$2$#s'); //{{A-n}} 
+                    value = value.replaceAll('\{\{(А-)([0-9])\}\}', '%$2$#s'); //{{A-n}} 
                 }
                 value = value.replaceAll('\{\{(0)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(O)\}\}', '%d'); //{{0}}
                 value = value.replaceAll('\{\{(A)\}\}', '%#s'); //{{A}}                    
+                value = value.replaceAll('\{\{(А)\}\}', '%#s'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
-                return `{\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
+                if (!lastElem)
+                    return `{\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
+                else
+                    return `{\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
+
             case "voice_menu":
-                return `say -v ${parameters[lang+"_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
+                return `say -v ${parameters[lang + "_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
             default:
                 return;
         }
@@ -153,8 +165,11 @@ async function generateLocalization() {
             if (platform === "service") {
                 service_data += `{\n"languages": [\n`
             }
-
+            var lastElem = false
             for (var j in langCodes) {
+                if (lastElem === langCodes - 1) {
+                    lastElem = true
+                }
                 let lang = langCodes[j];
                 let data = resource[platform][lang];
                 if (platform === "ios") {
@@ -178,7 +193,7 @@ async function generateLocalization() {
                 if (platform === "service") {
                     fileName = `outputs/service/languages.json`;
                     let start = `{\n"language": "${lang}",\n"keys": [\n`;
-                    let close = `\n]},\n`;
+                    let close = `\n]}${!lastElem ? "," : ""}\n`;
                     service_data += start + data + close;
                 }
                 if (platform === "android") {
@@ -209,13 +224,17 @@ async function generateLocalization() {
                 if (!(platform === "voice_menu" || platform === "service")) {
                     fs.writeFile(fileName, data, (e) => {
                         if (e) console.log(e);
-                    }); 
+                    });
                 }
-                
+
             }
 
             if (platform === "service") {
                 service_data += `]}`
+                let n = service_data.lastIndexOf("]},")
+                service_data = service_data.substring(0, n)
+                service_data = service_data + "]}]}"
+                console.log(service_data)
             }
 
             fs.writeFile("outputs/voice_menu.txt", voice_menu_data, (e) => {
@@ -238,13 +257,13 @@ async function generateLocalization() {
                     recursive: true
                 }).catch(console.error);
             } else {
-                    let alang = lang
-                    if (lang === "pt-BR") {
-                        alang = "pt-rBR"
-                    }
-                    else if (lang === "ro") {
-                        alang = "ro-rRO"
-                    }
+                let alang = lang
+                if (lang === "pt-BR") {
+                    alang = "pt-rBR"
+                }
+                else if (lang === "ro") {
+                    alang = "ro-rRO"
+                }
                 await fs.promises.mkdir(`outputs/android/values-${alang}`, {
                     recursive: true
                 }).catch(console.error);
