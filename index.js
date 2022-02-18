@@ -138,9 +138,9 @@ async function generateLocalization() {
                 value = value.replaceAll('\{\{(А)\}\}', '%#s'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 if (!lastElem)
-                    return `{\n     "and_key": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
+                    return `{\n     "andKey": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
                 else
-                    return `{\n     "and_key": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
+                    return `{\n     "andKey": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
 
             case "voice_menu":
                 return `say -v ${parameters[lang + "_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
