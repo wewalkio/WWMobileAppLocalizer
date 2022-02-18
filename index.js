@@ -68,14 +68,14 @@ async function generateLocalization() {
         for (var j in langCodes) {
             let langCode = langCodes[j];
             if (!!row.voice_menu_key) resource.voice_menu[langCode] += processText("voice_menu", langCode, row.voice_menu_key, row[langCode], undefined);
-            if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, row[langCode], undefined);
+            if (!!row.android_key) resource.android[langCode] += processText("android", langCode, row.android_key, "", row[langCode], undefined);
             if (!!row.ios_key) {
                 if (String(row.ios_key).startsWith("NS")) {
-                    resource.ios_info_plist[langCode] += processText("ios", langCode, row.ios_key, row[langCode], undefined);
+                    resource.ios_info_plist[langCode] += processText("ios", langCode, "", row.ios_key, row[langCode], undefined);
                 }
                 else {
-                    resource.ios[langCode] += processText("ios", langCode, row.ios_key, row[langCode], undefined);
-                    resource.service[langCode] += processText("service", langCode, row.ios_key, row[langCode], lastElem);
+                    resource.ios[langCode] += processText("ios", langCode, "", row.ios_key, row[langCode], undefined);
+                    resource.service[langCode] += processText("service", langCode, row.android_key, row.ios_key, row[langCode], lastElem);
                 }
             }
         }
@@ -84,7 +84,7 @@ async function generateLocalization() {
     /*{{А-2}}
     Text Helper Funtion
     */
-    function processText(platform, lang, key, value, lastElem) {
+    function processText(platform, lang, and_key, key, value, lastElem) {
         value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
@@ -103,7 +103,7 @@ async function generateLocalization() {
                 }
                 value = value.replaceAll("'", String.fromCharCode(92) + "'");
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
-                return `<string name="${key}">${value}</string>\n`;
+                return `<string name="${and_key}">${value}</string>\n`;
             case "ios":
                 if (lang === "ar") {
                     // This dirty hack will be solved as {{O-n}} & {{O}} replacement rather than {{0-n}} {{0}}
@@ -138,9 +138,9 @@ async function generateLocalization() {
                 value = value.replaceAll('\{\{(А)\}\}', '%#s'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
                 if (!lastElem)
-                    return `{\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
+                    return `{\n     "and_key": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
                 else
-                    return `{\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
+                    return `{\n     "and_key": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
 
             case "voice_menu":
                 return `say -v ${parameters[lang + "_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
