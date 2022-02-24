@@ -75,8 +75,10 @@ async function generateLocalization() {
                 }
                 else {
                     resource.ios[langCode] += processText("ios", langCode, "", row.ios_key, row[langCode], undefined);
-                    resource.service[langCode] += processText("service", langCode, row.android_key, row.ios_key, row[langCode], lastElem);
                 }
+            }
+            if (!String(row.ios_key).startsWith("NS")) {
+                resource.service[langCode] += processText("service", langCode, row.android_key, row.ios_key, row[langCode], lastElem);
             }
         }
     }
@@ -137,10 +139,20 @@ async function generateLocalization() {
                 value = value.replaceAll('\{\{(A)\}\}', '%#s'); //{{A}}                    
                 value = value.replaceAll('\{\{(А)\}\}', '%#s'); //{{A}}                    
                 value = value.replaceAll('"', String.fromCharCode(92) + '"');
+
+                let retunString = "\n"
+                if (and_key && and_key.length > 0) {
+                    retunString = retunString + `     "andKey": "${and_key}",\n`     
+                }
+                if (key && key.length > 0) {
+                    retunString = retunString + `     "key": "${key}",\n`     
+                }
+                retunString = retunString + `     "value": "${value}",\n     "languageKey": "${lang}"\n`
+
                 if (!lastElem)
-                    return `{\n     "andKey": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n},\n`;
+                    return `{${retunString}},\n`;
                 else
-                    return `{\n     "andKey": "${key}",\n     "key": "${key}",\n     "value": "${value}",\n     "languageKey": "${lang}"\n}\n`;
+                    return `{${retunString}}\n`;
 
             case "voice_menu":
                 return `say -v ${parameters[lang + "_voice_name"]} "${value}" -o ${lang}_${key}.aiff\n`;
