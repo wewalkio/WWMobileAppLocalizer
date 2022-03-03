@@ -32,7 +32,7 @@ async function generateLocalization() {
     let keys = list.shift(); // Retuns language names
     const platforms = ["android", "ios", "voice_menu", "ios_info_plist", "service"];
 
-    let langCodes = Object.keys(keys).splice(4); // Why 4: #, android, ios, voice_menu
+    let langCodes = Object.keys(keys).splice(6); // Why 6: #, android_key, ios_key, ios_plist_key, voice_key, speaker_key
     let resource = {
         android: {},
         ios: {},
@@ -78,7 +78,7 @@ async function generateLocalization() {
                 }
             }
             if (!String(row.ios_key).startsWith("NS")) {
-                resource.service[langCode] += processText("service", langCode, row.android_key, row.ios_key, row[langCode], lastElem);
+                resource.service[langCode] += processText("service", langCode, row.android_key, row.ios_key, row.plist_key, row.voice_key, row.speaker_key, row[langCode], lastElem);
             }
         }
     }
@@ -86,7 +86,7 @@ async function generateLocalization() {
     /*{{А-2}}
     Text Helper Funtion
     */
-    function processText(platform, lang, and_key, key, value, lastElem) {
+    function processText(platform, lang, and_key, key, plistKey, voiceKey, speakerKey, value, lastElem) {
         value = String(value).replaceAll("\n", "\\n");
         switch (platform) {
             case "android":
@@ -146,6 +146,15 @@ async function generateLocalization() {
                 }
                 if (key && key.length > 0) {
                     retunString = retunString + `     "key": "${key}",\n`     
+                }
+                if (plistKey && plistKey.length > 0) {
+                    retunString = retunString + `     "plistKey": "${plistKey}",\n`     
+                }
+                if (voiceKey && voiceKey.length > 0) {
+                    retunString = retunString + `     "voiceKey": "${voiceKey}",\n`     
+                }
+                if (speakerKey && speakerKey.length > 0) {
+                    retunString = retunString + `     "speakerKey": "${speakerKey}",\n`     
                 }
                 retunString = retunString + `     "value": "${value}",\n     "languageKey": "${lang}"\n`
 
