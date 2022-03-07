@@ -4,8 +4,10 @@
   "description": "Generates auto to implement localized string resource from Google Sheets",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.26.0",
     "follow-redirects": "^1.12.1",
     "https": "^1.0.0",
+    "node-fetch": "^3.2.1",
     "xlsx": "^0.17.0"
   },
   "devDependencies": {},
